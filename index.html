@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="la">
+<head>
+  <meta charset="UTF-8">
+  <title>Renuntiatio Summi Pontificis</title>
+  <style>
+    body {
+      font-family: serif;
+      line-height: 1.6;
+      padding: 2em;
+      background: #f8f9fa;
+    }
+    .word {
+      cursor: pointer;
+      padding: 0 2px;
+      border-radius: 4px;
+    }
+    .nominative { background-color: #fff59d; }
+    .accusative { background-color: #a5d6a7; }
+    .genitive { background-color: #90caf9; }
+    .dative { background-color: #ffcc80; }
+    .ablative { background-color: #ef9a9a; }
+
+    #info-box {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #333;
+      color: white;
+      padding: 1em;
+      font-size: 0.9em;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Renuntiatio Summi Pontificis – Analysis</h2>
+
+<p>
+  <span class="word" data-info="adverbe – donc : C'est pourquoi">Quapropter</span> 
+  <span class="word" data-info="adverbe – bien">bene</span> 
+  <span class="word nominative" data-info="nominatif masc. sg. – sujet : conscient">conscius</span> 
+  <span class="word genitive" data-info="génitif neutre sg. – complément de 'conscius' : du poids">ponderis</span> 
+  <span class="word genitive" data-info="génitif masc. sg. – complément de 'ponderis' : de cet">huius</span> 
+  <span class="word genitive" data-info="génitif masc. sg. – complément de 'ponderis' : acte">actus</span> 
+  <span class="word ablative" data-info="ablatif fem. sg. – CCL de manière : de liberté">plena</span> 
+  <span class="word ablative" data-info="ablatif fem. sg. – CCL de manière : de liberté">libertate</span> 
+  <span class="word" data-info="1re pers. sg. présent – verbe principal : je déclare">declaro</span> 
+  <span class="word accusative" data-info="accusatif masc. sg. – sujet de l'infinitif : moi">me</span> 
+  <span class="word dative" data-info="datif neutre sg. – complément indirect : au ministère">ministerio</span> 
+  <span class="word genitive" data-info="génitif masc. sg. – complément : de l'évêque">Episcopi</span> 
+  <span class="word genitive" data-info="génitif fem. sg. – complément : de Rome">Romae</span>, 
+  <span class="word genitive" data-info="génitif masc. sg. – apposition : du successeur">Successoris</span> 
+  <span class="word genitive" data-info="génitif masc. sg. – complément de 'Successoris' : de saint Pierre">Sancti Petri</span>, 
+  <span class="word dative" data-info="datif masc. sg. – complément d’agent : à moi">mihi</span> 
+  <span class="word ablative" data-info="ablatif – moyen : par les mains">per manus</span> 
+  <span class="word genitive" data-info="génitif masc. pl. – complément de 'manus' : des cardinaux">Cardinalium</span> 
+  <span class="word ablative" data-info="ablatif – CCT : le 19 avril 2005">die 19 aprilis MMV</span> 
+  <span class="word accusative" data-info="accusatif neutre sg. – participe : confié">commissum</span> 
+  <span class="word" data-info="infinitif présent – verbe dépendant de 'declaro' : renoncer">renuntiare</span>, 
+  <span class="word" data-info="locution conjonctive – conséquence : de sorte que">ita ut</span> 
+  <span class="word ablative" data-info="ablatif – CCT : à partir du 28 février 2013">a die 28 februarii MMXIII</span>, 
+  <span class="word ablative" data-info="ablatif – CCT : à 20h">hora 20</span>, 
+  <span class="word nominative" data-info="nominatif sg. – sujet : le Siège de Rome">sedes Romae</span>, 
+  <span class="word nominative" data-info="nominatif sg. – apposition : le Siège de saint Pierre">sedes Sancti Petri</span> 
+  <span class="word" data-info="subjonctif présent – conséquence : soit vacant">vacet</span> 
+  <span class="word" data-info="et : conjonction de coordination">et</span> 
+  <span class="word nominative" data-info="nominatif neutre sg. – sujet : le conclave">Conclave</span> 
+  <span class="word" data-info="ad + gérondif accusatif – but : pour élire">ad eligendum</span> 
+  <span class="word accusative" data-info="accusatif masc. sg. – COD : un nouveau Pontife">novum Summum Pontificem</span> 
+  <span class="word ablative" data-info="ablatif masc. pl. – agent : par ceux">ab his</span> 
+  <span class="word dative" data-info="datif masc. pl. – relatif : à qui">quibus</span> 
+  <span class="word" data-info="verbe 3e pers. sg. – il revient à">competit</span> 
+  <span class="word accusative" data-info="accusatif neutre sg. – infinitif passif : à convoquer">convocandum</span> 
+  <span class="word" data-info="subjonctif présent – soit convoqué">sit</span>.
+</p>
+
+<div id="info-box"></div>
+
+<script>
+  const words = document.querySelectorAll('.word');
+  const infoBox = document.getElementById('info-box');
+
+  words.forEach(word => {
+    word.addEventListener('click', () => {
+      infoBox.textContent = word.dataset.info;
+      infoBox.style.display = 'block';
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('word')) {
+      infoBox.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
